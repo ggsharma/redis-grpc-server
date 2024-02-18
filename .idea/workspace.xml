@@ -18,7 +18,35 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="" />
+    <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/bazel-out/darwin_arm64-fastbuild/bin/lib/server/_objs/server/server.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/bazel-out/darwin_arm64-fastbuild/bin/lib/server/_objs/server/server.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/bazel-out/darwin_arm64-fastbuild/bin/lib/server/libserver.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/bazel-out/darwin_arm64-fastbuild/bin/lib/server/libserver.a-2.params" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/external/bazel_tools" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/external/bazel_tools~xcode_configure_extension~local_config_xcode" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazel-redislite/external/local_config_apple_cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/server/server.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/server/server.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WORKSPACE" beforeDir="false" afterPath="$PROJECT_DIR$/WORKSPACE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/BUILD" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/BUILD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/MODULE.bazel" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/MODULE.bazel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/MODULE.bazel.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/MODULE.bazel.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/WORKSPACE" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/WORKSPACE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/lib/BUILD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/lib/cache/BUILD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/lib/cache/cache.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/lib/cache/cache.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazel-redislite/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/bazel-redislite/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BUILD" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BUILD" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +80,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -93,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708264728651</updated>
-      <workItem from="1708264729865" duration="1404000" />
+      <workItem from="1708264729865" duration="5478000" />
     </task>
     <servers />
   </component>
