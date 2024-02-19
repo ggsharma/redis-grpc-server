@@ -1,10 +1,20 @@
 #include <iostream>
 
-#include "lib/cache/cache.hpp"
+#include <memory>
+#include <string>
+#include <thread>
 
+#include "absl/flags/flag.h"
+#include "absl/flags/parse.h"
+#include "absl/strings/str_format.h"
+
+#include <grpc/support/log.h>
+#include <grpcpp/grpcpp.h>
+
+#include "Server.hpp"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    print();
+    print_server();
     return 0;
 }

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/CMakeFiles/absl-populate"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/CMakeFiles/absl-populate.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/CMakeFiles/absl-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-build.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-download.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-install.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-test.rule"
+		},
+		{
+			"file" : "/Users/gautamsharma/CS/C++/redislite/lib/server/build/_deps/absl-subbuild/absl-populate-prefix/src/absl-populate-stamp/absl-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"absl-populate"
+		],
+		"name" : "absl-populate"
+	}
+}
