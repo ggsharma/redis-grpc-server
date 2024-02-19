@@ -36,3 +36,5 @@ cmake-build-debug/
 bazel*
 
 build/*
+
+**/build/
