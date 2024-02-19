@@ -38,3 +38,5 @@ bazel*
 build/*
 
 **/build/
+
+client/*

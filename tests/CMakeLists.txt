@@ -22,6 +22,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 # redislite library
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../lib/cache)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../lib/logger)
 
 add_executable(
         controller_test
@@ -32,5 +33,16 @@ target_link_libraries(
         GTest::gtest_main
 )
 
+add_executable(
+        logger_test
+        tLogger.cpp
+)
+target_link_libraries(
+        logger_test
+        GTest::gtest_main
+)
+
+
 include(GoogleTest)
 gtest_discover_tests(controller_test)
+gtest_discover_tests(logger_test)

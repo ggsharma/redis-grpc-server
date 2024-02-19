@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.27)
-project(RedisLiteLibLogger)
+project(RedisLiteClient)
 set(CMAKE_CXX_STANDARD 17)
 # Add source files
 set(SOURCES
-        Logger.cpp
+        Client.cpp
         )
 
 # Add header files
 set(HEADERS
-        Logger.h
+        Client.h
         )
 
 ## Specify header file directories
-add_library(logger SHARED ${SOURCES} ${HEADERS})
+add_library(redisliteclient SHARED ${SOURCES} ${HEADERS})
 

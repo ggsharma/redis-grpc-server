@@ -1,3 +1,5 @@
+// Copyright
+
 #include <iostream>
 
 #include <memory>
@@ -14,10 +16,15 @@
 #include "Server.hpp"
 #include "Service.h"
 
+#include "Logger.h"
+
+
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+
+using redislite::lib::Logger;
 
 ABSL_FLAG(uint16_t, port, 50051, "Server port for the service");
 void RunServer(uint16_t port) {
@@ -41,6 +48,8 @@ void RunServer(uint16_t port) {
     server->Wait();
 }
 int main() {
+    Logger l;
+    l.log("hello from logger");
     RunServer(absl::GetFlag(FLAGS_port));
     return 0;
     print_server();
