@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libutf8_range_lib.a CMakeFiles/utf8_range_lib.dir/third_party/utf8_range/naive.c.o "CMakeFiles/utf8_range_lib.dir/third_party/utf8_range/range2-neon.c.o" "CMakeFiles/utf8_range_lib.dir/third_party/utf8_range/range2-sse.c.o"
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libutf8_range_lib.a

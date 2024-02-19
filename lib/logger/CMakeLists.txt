@@ -1,19 +1,16 @@
 cmake_minimum_required(VERSION 3.27)
 project(logger)
 
-
-include_directories(include)
-
 # Add source files
 set(SOURCES
-        src/Server.cpp
+        Logger.cpp
         )
 
 # Add header files
 set(HEADERS
-        include/Server.hpp
+        Logger.hpp
         )
 
 ## Specify header file directories
-add_library(server SHARED ${SOURCES} ${HEADERS})
+add_library(server SHARED  ${HEADERS})
 

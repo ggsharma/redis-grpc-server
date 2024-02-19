@@ -69,28 +69,28 @@ include CMakeFiles/server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/server.dir/flags.make
 
-CMakeFiles/server.dir/src/server.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/server.cpp.o: /Users/gautamsharma/CS/C++/redislite/lib/server/src/server.cpp
-CMakeFiles/server.dir/src/server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/gautamsharma/CS/C++/redislite/lib/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/src/server.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/server.cpp.o -MF CMakeFiles/server.dir/src/server.cpp.o.d -o CMakeFiles/server.dir/src/server.cpp.o -c /Users/gautamsharma/CS/C++/redislite/lib/server/src/server.cpp
+CMakeFiles/server.dir/Server.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/Server.cpp.o: /Users/gautamsharma/CS/C++/redislite/lib/server/Server.cpp
+CMakeFiles/server.dir/Server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/gautamsharma/CS/C++/redislite/lib/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/Server.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/Server.cpp.o -MF CMakeFiles/server.dir/Server.cpp.o.d -o CMakeFiles/server.dir/Server.cpp.o -c /Users/gautamsharma/CS/C++/redislite/lib/server/Server.cpp
 
-CMakeFiles/server.dir/src/server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gautamsharma/CS/C++/redislite/lib/server/src/server.cpp > CMakeFiles/server.dir/src/server.cpp.i
+CMakeFiles/server.dir/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/Server.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gautamsharma/CS/C++/redislite/lib/server/Server.cpp > CMakeFiles/server.dir/Server.cpp.i
 
-CMakeFiles/server.dir/src/server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gautamsharma/CS/C++/redislite/lib/server/src/server.cpp -o CMakeFiles/server.dir/src/server.cpp.s
+CMakeFiles/server.dir/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/Server.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gautamsharma/CS/C++/redislite/lib/server/Server.cpp -o CMakeFiles/server.dir/Server.cpp.s
 
 # Object files for target server
 server_OBJECTS = \
-"CMakeFiles/server.dir/src/server.cpp.o"
+"CMakeFiles/server.dir/Server.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
-libserver.dylib: CMakeFiles/server.dir/src/server.cpp.o
+libserver.dylib: CMakeFiles/server.dir/Server.cpp.o
 libserver.dylib: CMakeFiles/server.dir/build.make
 libserver.dylib: CMakeFiles/server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/gautamsharma/CS/C++/redislite/lib/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libserver.dylib"

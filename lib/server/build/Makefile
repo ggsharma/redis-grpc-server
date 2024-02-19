@@ -65,26 +65,6 @@ CMAKE_BINARY_DIR = /Users/gautamsharma/CS/C++/redislite/lib/server/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	/opt/homebrew/Cellar/cmake/3.27.6/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-.PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	/opt/homebrew/Cellar/cmake/3.27.6/bin/cpack --config ./CPackSourceConfig.cmake /Users/gautamsharma/CS/C++/redislite/lib/server/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-.PHONY : package_source/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -149,29 +129,29 @@ server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
-src/server.o: src/server.cpp.o
-.PHONY : src/server.o
+Server.o: Server.cpp.o
+.PHONY : Server.o
 
 # target to build an object file
-src/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
+Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server.cpp.o
+.PHONY : Server.cpp.o
 
-src/server.i: src/server.cpp.i
-.PHONY : src/server.i
+Server.i: Server.cpp.i
+.PHONY : Server.i
 
 # target to preprocess a source file
-src/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
+Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server.cpp.i
+.PHONY : Server.cpp.i
 
-src/server.s: src/server.cpp.s
-.PHONY : src/server.s
+Server.s: Server.cpp.s
+.PHONY : Server.s
 
 # target to generate assembly for a file
-src/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
+Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server.cpp.s
+.PHONY : Server.cpp.s
 
 # Help Target
 help:
@@ -180,13 +160,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... package"
-	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... server"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
+	@echo "... Server.o"
+	@echo "... Server.i"
+	@echo "... Server.s"
 .PHONY : help
 
 

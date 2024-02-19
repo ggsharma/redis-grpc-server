@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libabsl_kernel_timeout_internal.a CMakeFiles/absl_kernel_timeout_internal.dir/internal/kernel_timeout.cc.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libabsl_kernel_timeout_internal.a

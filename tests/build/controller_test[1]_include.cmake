@@ -1,0 +1,5 @@
+if(EXISTS "/Users/gautamsharma/CS/C++/redislite/tests/build/controller_test[1]_tests.cmake")
+  include("/Users/gautamsharma/CS/C++/redislite/tests/build/controller_test[1]_tests.cmake")
+else()
+  add_test(controller_test_NOT_BUILT controller_test_NOT_BUILT)
+endif()

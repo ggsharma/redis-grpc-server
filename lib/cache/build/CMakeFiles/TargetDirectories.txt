@@ -1,0 +1,3 @@
+/Users/gautamsharma/CS/C++/redislite/lib/cache/build/CMakeFiles/cache.dir
+/Users/gautamsharma/CS/C++/redislite/lib/cache/build/CMakeFiles/edit_cache.dir
+/Users/gautamsharma/CS/C++/redislite/lib/cache/build/CMakeFiles/rebuild_cache.dir

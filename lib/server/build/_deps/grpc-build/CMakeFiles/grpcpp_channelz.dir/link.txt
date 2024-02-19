@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libgrpcpp_channelz.a CMakeFiles/grpcpp_channelz.dir/__/__/gens/src/proto/grpc/channelz/channelz.pb.cc.o CMakeFiles/grpcpp_channelz.dir/__/__/gens/src/proto/grpc/channelz/channelz.grpc.pb.cc.o CMakeFiles/grpcpp_channelz.dir/src/cpp/server/channelz/channelz_service.cc.o CMakeFiles/grpcpp_channelz.dir/src/cpp/server/channelz/channelz_service_plugin.cc.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libgrpcpp_channelz.a

@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.27)
 project(server)
 
-
 include_directories(include)
 
 # Add source files

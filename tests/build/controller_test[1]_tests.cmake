@@ -1,0 +1,5 @@
+add_test([=[HelloTest.BasicAssertions]=]  [==[/Users/gautamsharma/CS/C++/redislite/tests/build/controller_test]==] [==[--gtest_filter=HelloTest.BasicAssertions]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HelloTest.BasicAssertions]=]  PROPERTIES WORKING_DIRECTORY [==[/Users/gautamsharma/CS/C++/redislite/tests/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[HelloTest1.BasicAssertions]=]  [==[/Users/gautamsharma/CS/C++/redislite/tests/build/controller_test]==] [==[--gtest_filter=HelloTest1.BasicAssertions]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HelloTest1.BasicAssertions]=]  PROPERTIES WORKING_DIRECTORY [==[/Users/gautamsharma/CS/C++/redislite/tests/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  controller_test_TESTS HelloTest.BasicAssertions HelloTest1.BasicAssertions)

@@ -5,4 +5,17 @@
 #ifndef REDISLITE_CONTROLLER_H
 #define REDISLITE_CONTROLLER_H
 
+namespace redislite{
+    class Controller{
+    public:
+        Controller(){
+
+        }
+    private:
+
+    };
+}
+
+
+
 #endif //REDISLITE_CONTROLLER_H
