@@ -22,34 +22,33 @@
 //  * SOFTWARE.
 //  *
 
-//
-// Created by Gautam Sharma on 2/19/24.
-//
+#ifndef REDISLITE_CACHE_H
+#define REDISLITE_CACHE_H
 
-#ifndef REDISLITE_REGISTRY_H
-#define REDISLITE_REGISTRY_H
-
-#include <string>
+#include <iostream>
+#include <unordered_map>
 #include <memory>
 #include <utility>
 
-#include "Cache.hpp"
-#include "Logger.h"
+
 
 namespace redislite{
+    namespace lib {
+        class Cache{
+        private:
+            const size_t MAX_NUM_ENTRIES = 100;
+            // TODO need to make it more flexible
+            // value to frequency
+            std::unordered_map<std::string, std::pair<std::string,int>> _data;
+        public:
+            // used for testing
+            inline std::unordered_map<std::string, std::pair<std::string,int>> getData(){return _data;}
+            Cache() noexcept = default;
+            std::pair<bool,std::string> Get(std::string key);
+            void Set(std::string key, std::string val);
+            void print();
+        }; // EO class Cache
+    }; // EO namespace lib
+}; // EO namespace redislite
 
-    class Registry{
-    private:
-        redislite::lib::Logger _logger;
-    public:
-        Registry() = default;
-        void Init(std::string connection_id);
-        std::pair<bool,std::string> Get(std::string uniqueID, std::string key);
-        void Set(std::string uniqueID, std::string key, std::string value);
-    private:
-        void _init(const std::string& uniqueID);
-        std::shared_ptr<redislite::lib::Cache> _getInstance(const std::string& uniqueID);
-        std::unordered_map<std::string, std::shared_ptr<redislite::lib::Cache>> _uniqueIDToCacheMap;
-    };
-}
-#endif //REDISLITE_REGISTRY_H
+#endif //REDISLITE_CACHE_H

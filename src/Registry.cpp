@@ -27,20 +27,26 @@
 //
 
 #include "Registry.h"
+#include "absl/flags/flag.h"
+#include "absl/flags/parse.h"
+#include "absl/strings/str_format.h"
 
 using redislite::Registry;
 using redislite::lib::Cache;
 
 void Registry::Init(std::string connection_id){
     this->_init(connection_id);
+    _logger.log(absl::StrFormat("Cache initialized with connection id %s", connection_id));
 }
 
 std::pair<bool,std::string> Registry::Get(std::string uniqueID, std::string key){
+    _logger.log(absl::StrFormat("Getting Value for Key:%s", key));
     auto cachePtr = this->_getInstance(uniqueID);
     return cachePtr->Get(key);
 }
 
 void Registry::Set(std::string uniqueID, std::string key, std::string value){
+    _logger.log(absl::StrFormat("Setting Value:%s for Key:%s ",value, key));
     auto cachePtr = this->_getInstance(uniqueID);
     cachePtr->Set(key, value);
 }

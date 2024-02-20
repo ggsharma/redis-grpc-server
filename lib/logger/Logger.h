@@ -65,6 +65,7 @@ namespace redislite{
             const int _numDashes = 20;
             const char symbol = '-';
             inline void _init(){
+                std::cout << _projectName << std::endl;
                 for(size_t idx = 0; idx < _numDashes; ++idx) {
                     std::cout << symbol;
                 }

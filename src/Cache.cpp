@@ -24,54 +24,43 @@
 
 //
 // Created by Gautam Sharma on 2/18/24.
+//
+#include "Cache.hpp"
 
-#include <iostream>
+using redislite::lib::Cache;
 
-#include <memory>
-#include <string>
-#include <thread>
+std::pair<bool,std::string> Cache::Get(std::string key){
+    if(this->_data.find(key) == this->_data.end()){
+        return std::make_pair(false, "REDISLITE_NONE");
+    }
+    // increment the frequency
+    this->_data[key].second += 1;
+    return  std::make_pair(true, this->_data.at(key).first);
+}
 
-#include "absl/flags/flag.h"
-#include "absl/flags/parse.h"
-#include "absl/strings/str_format.h"
+void Cache::Set(std::string key, std::string value){
+    if(this->_data.size() == this->MAX_NUM_ENTRIES){
+        // Find the element with the minimum frequency
+        auto min_freq_itr = this->_data.begin();
+        for (auto itr = this->_data.begin(); itr != this->_data.end(); ++itr) {
+            if (itr->second.second < min_freq_itr->second.second) {
+                min_freq_itr = itr;
+            }
+        }
 
-#include <grpc/support/log.h>
-#include <grpcpp/grpcpp.h>
-
-#include "Logger.h"
-#include "Controller.h"
-#include "Registry.h"
-
-
-using grpc::Server;
-using grpc::ServerBuilder;
-using grpc::ServerContext;
-using grpc::Status;
-
-using redislite::lib::Logger;
-using redislite::Controller;
-using redislite::Registry;
-
-
-
-int main(int argc, char* argv[]) {
-    // Initialize registry
-    Registry r;
-    // Set default port value
-    uint16_t portValue = 50051;
-    // Parse command line arg
-    if(argc == 3){
-        if (strcmp(argv[1], "-p") == 0){
-            portValue = static_cast<uint16_t>(std::stoi(argv[2]));
-
+        // Erase the element with the minimum frequency
+        if (min_freq_itr != _data.end()) {
+            _data.erase(min_freq_itr);
         }
     }
+    this->_data[key].first = value;
+    // init the frequency
+    this->_data[key].second = 1;
+    assert(this->_data.size() <= MAX_NUM_ENTRIES);
+}
 
-    // Construct a unique server address
-    std::string server_address = absl::StrFormat("0.0.0.0:%d", portValue);
-    // Instantiate a controller
-    Controller c(r,server_address);
-    // Run server at the port number
-    c.RunServer(portValue);
-    return 0;
+void Cache::print(){
+    for(auto&[k,v] : this->_data){
+        std::cout<< "Key: "<< k << " " << "Value: " << v.first << " " << "Frequency: "<< v.second << std::endl;
+    }
 }

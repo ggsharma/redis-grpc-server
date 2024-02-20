@@ -31,6 +31,7 @@ import redislite_pb2 as redislite_pb2
 import redislite_pb2_grpc as redislite_pb2_grpc
 import random
 import string
+import time
 # Define the characters to choose from for generating random strings
 characters = string.ascii_letters + string.digits + string.punctuation
 
@@ -50,6 +51,7 @@ def run():
             # Generate random strings 200 times
             for _ in range(num_strings):
                 # Generate a random string of specified length
+                time.sleep(0.01)
                 random_string = ''.join(random.choice(characters) for _ in range(string_length))
                 response = stub.Set(redislite_pb2.SetRequest(key=random_string, value="sharma"))
             #response = stub.InitConnection(redislite_pb2.InitRequest(connection_id="0.0.0.0:50051"))

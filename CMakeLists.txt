@@ -69,21 +69,21 @@ target_link_libraries(rl_grpc_proto
 set(SOURCES
         main.cpp
         src/Controller.cpp
-        src/Service.cpp
-        src/Registry.cpp)
+        src/Registry.cpp
+        src/Cache.cpp)
 
 # main redislite executable server
 add_executable(redislite ${SOURCES})
 
 # redislite search directories
 include_directories(include/)
-include_directories(lib/server/)
-include_directories(lib/cache/)
+#include_directories(lib/server/)
+#include_directories(lib/cache/)
 include_directories(lib/logger/)
 
 # Set the directory where your dylib resides
-set(SERVER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/server/build)
-set(CACHE_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/cache/build)
+#set(SERVER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/server/build)
+##set(CACHE_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/cache/build)
 set(LOGGER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/logger/build)
 
 # Check the operating system and adjust the linking accordingly
@@ -103,13 +103,13 @@ set(LOGGER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/logger/build)
 # also build client
 add_subdirectory(client)
 add_subdirectory(lib/logger)
-add_subdirectory(lib/server)
-add_subdirectory(lib/cache)
+#add_subdirectory(lib/server)
+#add_subdirectory(lib/cache)
 
 #add_subdirectory(tests)
 
 # Link the library to your executable
-target_link_libraries(redislite cache logger rl_grpc_proto grpc++ absl::flags absl::flags_parse)
+target_link_libraries(redislite logger rl_grpc_proto grpc++ absl::flags absl::flags_parse)
 
 
 
