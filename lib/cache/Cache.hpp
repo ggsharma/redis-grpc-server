@@ -9,17 +9,20 @@
 #include <iostream>
 #include <unordered_map>
 #include <memory>
-
+#include <utility>
 namespace redislite{
     namespace lib {
         class Cache{
         private:
-            Cache() noexcept = default;
-            std::unordered_map<std::string, std::shared_ptr<Cache>> _uniqueIDToCacheMap;
+
+            const size_t MAX_NUM_ENTRIES = 100;
             // TODO need to make it more flexible
-            std::unordered_map<std::string, int> _data;
+            // value to frequency
+            std::unordered_map<std::string, std::pair<std::string,int>> _data;
         public:
-            std::shared_ptr<Cache> getInstance(const std::string& uniqueID);
+            Cache() noexcept = default;
+            std::pair<bool,std::string> Get(std::string key);
+            void Set(std::string key, std::string val);
         }; // EO class Cache
     }; // EO namespace lib
 }; // EO namespace redislite

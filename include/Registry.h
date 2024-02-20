@@ -26,34 +26,26 @@
 // Created by Gautam Sharma on 2/19/24.
 //
 
-#include "Registry.h"
+#ifndef REDISLITE_REGISTRY_H
+#define REDISLITE_REGISTRY_H
 
-using redislite::Registry;
-using redislite::lib::Cache;
+#include <string>
+#include <memory>
+#include <utility>
+#include "Cache.hpp"
 
-void Registry::Init(std::string connection_id){
-    this->_init(connection_id);
+namespace redislite{
+
+    class Registry{
+    public:
+        Registry() = default;
+        void Init(std::string connection_id);
+        std::pair<bool,std::string> Get(std::string uniqueID, std::string key);
+        void Set(std::string uniqueID, std::string key, std::string value);
+    private:
+        void _init(const std::string& uniqueID);
+        std::shared_ptr<redislite::lib::Cache> _getInstance(const std::string& uniqueID);
+        std::unordered_map<std::string, std::shared_ptr<redislite::lib::Cache>> _uniqueIDToCacheMap;
+    };
 }
-
-std::pair<bool,std::string> Registry::Get(std::string uniqueID, std::string key){
-    auto cachePtr = this->_getInstance(uniqueID);
-    return cachePtr->Get(key);
-}
-
-void Registry::Set(std::string uniqueID, std::string key, std::string value){
-    auto cachePtr = this->_getInstance(uniqueID);
-    cachePtr->Set(key, value);
-}
-
-
-void Registry::_init(const std::string& uniqueID){
-    this->_uniqueIDToCacheMap[uniqueID] = std::make_shared<Cache>(Cache());
-}
-
-std::shared_ptr<Cache> Registry::_getInstance(const std::string& uniqueID){
-    if(this->_uniqueIDToCacheMap.find(uniqueID) != this->_uniqueIDToCacheMap.end()){
-        return this->_uniqueIDToCacheMap[uniqueID];
-    }
-    this->_uniqueIDToCacheMap[uniqueID] = std::make_shared<Cache>(Cache());
-    return this->_uniqueIDToCacheMap[uniqueID];
-}
+#endif //REDISLITE_REGISTRY_H

@@ -4,9 +4,7 @@
 
 #ifndef REDISLITE_SERVICE_H
 #define REDISLITE_SERVICE_H
-//
-// Created by Gautam Sharma on 2/19/24.
-//
+
 #include <iostream>
 #include <memory>
 #include <string>
@@ -25,16 +23,17 @@ using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
-using redislite::Greeter;
-using redislite::HelloReply;
-using redislite::HelloRequest;
+
+using redislite::RedisLiteServer;
+using redislite::InitRequest;
+using redislite::InitReply;
 
 
 
 // Logic and data behind the server's behavior.
-class GreeterServiceImpl final : public Greeter::Service{
-        Status SayHello(ServerContext* context, const HelloRequest* request,
-        HelloReply* reply) override;
+class RedisLiteServiceImpl final : public RedisLiteServer::Service{
+        Status InitConnection(ServerContext* context, const InitRequest* request,
+                              InitReply* reply) override;
 
 };
 

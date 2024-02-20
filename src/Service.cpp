@@ -6,10 +6,11 @@
 
 
 // Logic and data behind the server's behavior.
-Status GreeterServiceImpl::SayHello(ServerContext* context, const HelloRequest* request,
-                HelloReply* reply)  {
+Status RedisLiteServiceImpl::InitConnection(ServerContext* context, const InitRequest* request,
+        InitReply* reply){
     std::string prefix("Hello ");
-    reply->set_message(prefix + request->name());
+    reply->set_status("success");
+    std::cout << "Got message: " << request->connection_id()<< std::endl;
     return Status::OK;
 }
 

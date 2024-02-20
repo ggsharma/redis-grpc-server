@@ -69,7 +69,8 @@ target_link_libraries(rl_grpc_proto
 set(SOURCES
         main.cpp
         src/Controller.cpp
-        src/Service.cpp)
+        src/Service.cpp
+        src/Registry.cpp)
 
 # main redislite executable server
 add_executable(redislite ${SOURCES})
@@ -108,7 +109,7 @@ add_subdirectory(lib/cache)
 #add_subdirectory(tests)
 
 # Link the library to your executable
-target_link_libraries(redislite rl_grpc_proto grpc++ absl::flags absl::flags_parse)
+target_link_libraries(redislite cache logger rl_grpc_proto grpc++ absl::flags absl::flags_parse)
 
 
 
