@@ -204,22 +204,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/tCache.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Registry.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Registry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Service.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cache/Cache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cache/Cache.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Cache.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logger/Logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/Logger.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/server/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/server/Server.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/server/Server.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/redislite_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/redislite_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Registry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Registry.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Client.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Client.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cache/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/dist/redislite_client-0.1-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/dist/redislite_client-0.1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_client.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_client.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_client.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_client.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_pb2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_pb2.pyi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/redislite_pb2_grpc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,14 +283,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/redislite/redislite" />
+      <recent name="$PROJECT_DIR$/client/redislite" />
+      <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/include" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/lib/logger" />
-      <recent name="$PROJECT_DIR$/lib/logger/include" />
-      <recent name="$PROJECT_DIR$/lib/server" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.prod build">
+  <component name="RunManager" selected="Shell Script.prod run">
     <configuration name="RedisLite debug" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="redislite" TARGET_NAME="redislite" CONFIG_NAME="redislite" RUN_PATH="$PROJECT_DIR$/build/redislite">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -1465,7 +1468,8 @@
       <workItem from="1708380587894" duration="15377000" />
       <workItem from="1708398143024" duration="1478000" />
       <workItem from="1708399677589" duration="1658000" />
-      <workItem from="1708428452477" duration="954000" />
+      <workItem from="1708428452477" duration="1110000" />
+      <workItem from="1708481536650" duration="4521000" />
     </task>
     <servers />
   </component>

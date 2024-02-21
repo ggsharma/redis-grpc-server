@@ -19,7 +19,7 @@ FetchContent_MakeAvailable(gRPC)
 option(protobuf_MODULE_COMPATIBLE TRUE)
 
 # ensure protobuf ins installed
-find_package(Protobuf CONFIG REQUIRED)
+#find_package(Protobuf CONFIG REQUIRED)
 
 message(STATUS "Using protobuf ${Protobuf_VERSION}")
 
@@ -101,7 +101,7 @@ set(LOGGER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/logger/build)
 #endif ()
 
 # also build client
-add_subdirectory(client)
+#add_subdirectory(client)
 add_subdirectory(lib/logger)
 #add_subdirectory(lib/server)
 #add_subdirectory(lib/cache)
