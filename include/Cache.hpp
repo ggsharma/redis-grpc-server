@@ -22,8 +22,8 @@
 //  * SOFTWARE.
 //  *
 
-#ifndef REDISLITE_CACHE_H
-#define REDISLITE_CACHE_H
+#ifndef REDISGRPC_CACHE_H
+#define REDISGRPC_CACHE_H
 
 #include <iostream>
 #include <unordered_map>
@@ -32,7 +32,7 @@
 
 
 
-namespace redislite{
+namespace redisgrpc{
     namespace lib {
         class Cache{
         private:
@@ -49,6 +49,6 @@ namespace redislite{
             void print();
         }; // EO class Cache
     }; // EO namespace lib
-}; // EO namespace redislite
+}; // EO namespace redisgrpc
 
-#endif //REDISLITE_CACHE_H
+#endif //REDISGRPC_CACHE_H

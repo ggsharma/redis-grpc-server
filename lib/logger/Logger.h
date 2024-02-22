@@ -26,12 +26,12 @@
 // Created by Gautam Sharma on 2/19/24.
 //
 
-#ifndef REDISLITE_LOGGER_H
-#define REDISLITE_LOGGER_H
+#ifndef REDISGRPC_LOGGER_H
+#define REDISGRPC_LOGGER_H
 
 #include <iostream>
 
-namespace redislite{
+namespace redisgrpc{
     namespace lib{
         class Logger{
         public:
@@ -55,7 +55,7 @@ namespace redislite{
                 return this->_projectName;
             }
         private:
-            const std::string _projectName = "🔥redislite";
+            const std::string _projectName = "redisgrpc";
             void _print(){
                 for(size_t idx = 0; idx < _numDashes; ++idx) {
                     std::cout << symbol;
@@ -73,5 +73,5 @@ namespace redislite{
             }
         };// EO class Logger
     } // EO namespace lib
-}; // EO namespace redislite
-#endif //REDISLITE_LOGGER_H
+}; // EO namespace redisgrpc
+#endif //REDISGRPC_LOGGER_H

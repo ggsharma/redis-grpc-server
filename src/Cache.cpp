@@ -28,7 +28,7 @@
 #include "Cache.hpp"
 #include <cassert>
 
-using redislite::lib::Cache;
+using redisgrpc::lib::Cache;
 
 std::pair<bool,std::string> Cache::Get(std::string key){
     if(this->_data.find(key) == this->_data.end()){

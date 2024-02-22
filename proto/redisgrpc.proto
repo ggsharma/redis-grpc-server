@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package redislite;
+package redisgrpc;
 
 // The greeting service definition.
 //service Greeter {
@@ -10,7 +10,7 @@ package redislite;
 //  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
 //}
 
-service RedisLiteServer{
+service RedisGrpcServer{
   rpc InitConnection(InitRequest) returns (InitReply){};
   rpc Set(SetRequest) returns (SetReply) {};
   rpc Get(GetRequest) returns (GetReply) {};

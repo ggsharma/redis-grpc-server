@@ -26,8 +26,8 @@
 // Created by Gautam Sharma on 2/19/24.
 //
 
-#ifndef REDISLITE_REGISTRY_H
-#define REDISLITE_REGISTRY_H
+#ifndef REDISGRPC_REGISTRY_H
+#define REDISGRPC_REGISTRY_H
 
 #include <string>
 #include <memory>
@@ -36,11 +36,11 @@
 #include "Cache.hpp"
 #include "Logger.h"
 
-namespace redislite{
+namespace redisgrpc{
 
     class Registry{
     private:
-        redislite::lib::Logger _logger;
+        redisgrpc::lib::Logger _logger;
     public:
         Registry() = default;
         void Init(std::string connection_id);
@@ -48,8 +48,8 @@ namespace redislite{
         void Set(std::string uniqueID, std::string key, std::string value);
     private:
         void _init(const std::string& uniqueID);
-        std::shared_ptr<redislite::lib::Cache> _getInstance(const std::string& uniqueID);
-        std::unordered_map<std::string, std::shared_ptr<redislite::lib::Cache>> _uniqueIDToCacheMap;
+        std::shared_ptr<redisgrpc::lib::Cache> _getInstance(const std::string& uniqueID);
+        std::unordered_map<std::string, std::shared_ptr<redisgrpc::lib::Cache>> _uniqueIDToCacheMap;
     };
 }
-#endif //REDISLITE_REGISTRY_H
+#endif //REDISGRPC_REGISTRY_H

@@ -48,9 +48,9 @@ using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
 
-using redislite::lib::Logger;
-using redislite::Controller;
-using redislite::Registry;
+using redisgrpc::lib::Logger;
+using redisgrpc::Controller;
+using redisgrpc::Registry;
 
 
 

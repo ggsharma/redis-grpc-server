@@ -31,21 +31,21 @@
 #include "Logger.h"
 // Demonstrate some basic assertions.
 TEST(LoggerTest, Init) {
-    using redislite::lib::Logger;
+    using redisgrpc::lib::Logger;
     Logger l;
 
     //EXPECT_TRUE(l);
 }
 
 TEST(LoggerTest, NumDashes) {
-using redislite::lib::Logger;
+using redisgrpc::lib::Logger;
 Logger l;
 EXPECT_EQ(l.getNumDashes(), 20);
 }
 
 
 TEST(LoggerTest, ProjectName) {
-using redislite::lib::Logger;
+using redisgrpc::lib::Logger;
 Logger l;
 std::string expected = "🔥redislite";
 EXPECT_EQ(l.getProjectName(), expected);

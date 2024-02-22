@@ -32,14 +32,14 @@
 #include <random>
 // Demonstrate some basic assertions.
 TEST(CacheTest, Init) {
-using redislite::lib::Cache;
+using redisgrpc::lib::Cache;
 Cache c;
 EXPECT_EQ(c.getData().size(),0);
 }
 
 
 TEST(CacheTest, Set) {
-using redislite::lib::Cache;
+using redisgrpc::lib::Cache;
 Cache c;
 std::string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
@@ -68,7 +68,7 @@ EXPECT_EQ(c.getData().size(),100);
 }
 
 TEST(CacheTest, Get) {
-using redislite::lib::Cache;
+using redisgrpc::lib::Cache;
 Cache c;
 std::string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 

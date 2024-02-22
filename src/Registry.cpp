@@ -31,8 +31,8 @@
 #include "absl/flags/parse.h"
 #include "absl/strings/str_format.h"
 
-using redislite::Registry;
-using redislite::lib::Cache;
+using redisgrpc::Registry;
+using redisgrpc::lib::Cache;
 
 void Registry::Init(std::string connection_id){
     this->_init(connection_id);

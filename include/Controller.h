@@ -2,8 +2,9 @@
 // Created by Gautam Sharma on 2/18/24.
 //
 
-#ifndef REDISLITE_CONTROLLER_H
-#define REDISLITE_CONTROLLER_H
+#ifndef REDISGRPC_CONTROLLER_H
+#define REDISGRPC_CONTROLLER_H
+
 #include <iostream>
 #include <memory>
 #include <string>
@@ -19,8 +20,8 @@
 #include <grpcpp/grpcpp.h>
 #include "Registry.h"
 
-#include "redislite.grpc.pb.h"
-#include "redislite.pb.h"
+#include "redisgrpc.grpc.pb.h"
+#include "redisgrpc.pb.h"
 
 using grpc::Server;
 using grpc::ServerAsyncResponseWriter;
@@ -29,18 +30,18 @@ using grpc::ServerCompletionQueue;
 using grpc::ServerContext;
 using grpc::Status;
 
-using redislite::RedisLiteServer;
-using redislite::InitRequest;
-using redislite::InitReply;
-using redislite::SetRequest;
-using redislite::SetReply;
+using redisgrpc::RedisGrpcServer;
+using redisgrpc::InitRequest;
+using redisgrpc::InitReply;
+using redisgrpc::SetRequest;
+using redisgrpc::SetReply;
 
-namespace redislite{
-    class RedisLiteServiceImpl final : public RedisLiteServer::Service {
+namespace redisgrpc{
+    class RedisGrpcServiceImpl final : public RedisGrpcServer::Service {
         std::string _connectionID;
         Registry& _registry;
     public:
-        RedisLiteServiceImpl(std::string connectionId,Registry& registry):_connectionID(connectionId), _registry(registry){};
+        RedisGrpcServiceImpl(std::string connectionId,Registry& registry):_connectionID(connectionId), _registry(registry){};
         Status InitConnection(ServerContext* context, const InitRequest* request,
                               InitReply* reply) override {
             std::string connectionId = request->connection_id();
@@ -52,6 +53,7 @@ namespace redislite{
             }
             return Status::OK;
         }
+
         Status Set(ServerContext* context, const SetRequest* request,
                    SetReply* reply) override {
             std::string key = request->key();
@@ -76,7 +78,6 @@ namespace redislite{
         }
     };
 
-
     class Controller{
     public:
         Controller(Registry& registry, std::string connectionId): _registry(registry), _connectionID(connectionId){
@@ -97,7 +98,7 @@ namespace redislite{
 
         void RunServer(uint16_t port) {
             std::string server_address = absl::StrFormat("0.0.0.0:%d", port);
-            RedisLiteServiceImpl service (_connectionID, _registry);
+            RedisGrpcServiceImpl service (_connectionID, _registry);
 
             grpc::EnableDefaultHealthCheckService(true);
             grpc::reflection::InitProtoReflectionServerBuilderPlugin();
@@ -109,7 +110,7 @@ namespace redislite{
             builder.RegisterService(&service);
             // Finally assemble the server.
             std::unique_ptr<Server> server(builder.BuildAndStart());
-            std::cout << "RedisLite server listening on " << server_address << std::endl;
+            std::cout << "RedisGrpc server listening on " << server_address << std::endl;
 
             // Wait for the server to shutdown. Note that some other thread must be
             // responsible for shutting down the server for this call to ever return.
@@ -124,4 +125,4 @@ namespace redislite{
 
 
 
-#endif //REDISLITE_CONTROLLER_H
+#endif //REDISGRPC_CONTROLLER_H
