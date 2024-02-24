@@ -2,8 +2,6 @@
 
 by Gautam Sharma - [Visit Website](https://gsharma.dev)
 
-Redis gRPC server ⚡️ is a server library that acts like Redis, but it talks to other programs through a method called gRPC. It's like a fast and efficient way for different programs to communicate, making it easy to build things like Redis but in a simpler way.
-
 ## Introduction
 
 Welcome to RedisGrpcServer! Here, we'll learn how to create a system similar to Redis, a popular data storage tool. But we'll do it in a way that's easy to understand, using a programming language called C++ and a method called gRPC.
