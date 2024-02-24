@@ -46,7 +46,7 @@ std::pair<bool,std::string> Registry::Get(std::string uniqueID, std::string key)
 }
 
 void Registry::Set(std::string uniqueID, std::string key, std::string value){
-    _logger.log(absl::StrFormat("Setting Value:%s for Key:%s ",value, key));
+     _logger.log(absl::StrFormat("Setting Value:%s for Key:%s ",value, key));
     auto cachePtr = this->_getInstance(uniqueID);
     cachePtr->Set(key, value);
 }

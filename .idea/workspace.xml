@@ -19,23 +19,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/redisgrpc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Cache.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Cache.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Controller.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Registry.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Registry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logger/Logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/Logger.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/redislite.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/redisgrpc.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/redisgrpc.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/redisgrpc.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Registry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Registry.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tCache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tCache.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tLogger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tLogger.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +174,7 @@
       <workItem from="1708428452477" duration="1110000" />
       <workItem from="1708481536650" duration="7079000" />
       <workItem from="1708606945073" duration="1041000" />
-      <workItem from="1708639928678" duration="1184000" />
+      <workItem from="1708639928678" duration="5483000" />
     </task>
     <servers />
   </component>
@@ -214,11 +202,6 @@
           <url>file://$PROJECT_DIR$/main.cpp</url>
           <line>55</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Registry.cpp</url>
-          <line>41</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

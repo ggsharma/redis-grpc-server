@@ -2,13 +2,6 @@ syntax = "proto3";
 
 package redisgrpc;
 
-// The greeting service definition.
-//service Greeter {
-//  // Sends a greeting
-//  rpc SayHello (HelloRequest) returns (HelloReply) {}
-//  // Sends another greeting
-//  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
-//}
 
 service RedisGrpcServer{
   rpc InitConnection(InitRequest) returns (InitReply){};
