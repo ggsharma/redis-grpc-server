@@ -23,31 +23,34 @@
 //  *
 
 //
-// Created by Gautam Sharma on 2/19/24.
+// Created by Gautam Sharma on 3/2/24.
 //
 
+#ifndef REDISGRPC_MACROS_H
+#define REDISGRPC_MACROS_H
 
-//#include <gtest/gtest.h>
-//#include "Logger.h"
-//// Demonstrate some basic assertions.
-//TEST(LoggerTest, Init) {
-//    using redisgrpc::lib::Logger;
-//    Logger l;
-//
-//    //EXPECT_TRUE(l);
-//}
-//
-//TEST(LoggerTest, NumDashes) {
-//using redisgrpc::lib::Logger;
-//Logger l;
-//EXPECT_EQ(l.getNumDashes(), 20);
-//}
-//
-//
-//TEST(LoggerTest, ProjectName) {
-//using redisgrpc::lib::Logger;
-//Logger l;
-//std::string expected = "🔥redislite";
-//EXPECT_EQ(l.getProjectName(), expected);
-//}
-//
+#include <string>
+
+namespace redisgrpc{
+    namespace status{
+        #define __CONNECTION_OK__ "REDISGRPC_OK"
+        #define __CONNECTION_ERROR__ "REDISGRPC_CONNECTION_ERROR"
+        #define __KEY_FOUND__
+        #define __KEY_NOT_FOUND__
+        #define __SET_SUCCESS__ "REDISGRPC_SET_OK"
+        #define __SET_ERROR__ "REDISGRPC_SET_ERROR"
+        #define __GET_SUCCESS__ "REDISGRPC_GET_OK"
+        #define __GET_ERROR__ "REDISGRPC_KEY_NOT_FOUND"
+        #define __SHUTDOWN_OK__ "REDISGRPC_SHUTDOWN_OK"
+        #define __SHUTDOWN_ERROR__ "REDISGRPC_SHUTDOWN_ERROR"
+        #define __CONNECTION_ID_ERROR__ "REDISGRPC_INCORRECT_CONNECTION_ID"
+
+    }
+
+    enum class SERVER_STATUS{
+        NOT_STARTED, RUNNING, KILLED
+    };
+}
+
+
+#endif //REDISGRPC_MACROS_H

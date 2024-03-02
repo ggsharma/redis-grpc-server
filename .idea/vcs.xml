@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests/_deps/grpc-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests/_deps/grpc-src/third_party/abseil-cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests/_deps/grpc-src/third_party/benchmark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests/_deps/grpc-src/third_party/bloaty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests/_deps/grpc-src/third_party/boringssl-with-bazel" vcs="Git" />
   </component>
 </project>

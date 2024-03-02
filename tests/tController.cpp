@@ -5,20 +5,36 @@
 #ifndef REDISGRPC_TCONTROLLER_H
 #define REDISGRPC_TCONTROLLER_H
 #include <gtest/gtest.h>
+
 #include "Controller.h"
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-// Expect two strings not to be equal.
-EXPECT_STRNE("hello", "world");
-// Expect equality.
-EXPECT_EQ(7 * 6, 42);
+
+using redisgrpc::Controller;
+using redisgrpc::SERVER_STATUS;
+
+
+// Tests if the Controller has the correct server address
+TEST(Controller, ServerAddress) {
+uint16_t portValue = 63000;
+std::string server_address = absl::StrFormat("0.0.0.0:%d", portValue);
+Controller c (server_address);
+ASSERT_EQ(c.getConnectionID(), server_address);
 }
 
-TEST(HelloTest1, BasicAssertions) {
-// Expect two strings not to be equal.
-redisgrpc::Controller c1;
-EXPECT_STRNE("hello", "world");
-// Expect equality.
-EXPECT_EQ(7 * 6, 42);
+// Tests if the Server status is correct on initialization
+TEST(Controller, ServerStatusWhenInit) {
+uint16_t portValue = 63000;
+std::string server_address = absl::StrFormat("0.0.0.0:%d", portValue);
+Controller c (server_address);
+ASSERT_EQ(c.getServerStatus(), SERVER_STATUS::NOT_STARTED);
 }
+
+// Tests if the Server status is correct when started
+TEST(Controller, ServerStatusWhenStarted) {
+uint16_t portValue = 63000;
+std::string server_address = absl::StrFormat("0.0.0.0:%d", portValue);
+Controller c (server_address);
+ASSERT_EQ(c.getServerStatus(), SERVER_STATUS::RUNNING);
+}
+
+
 #endif //REDISGRPC_TCONTROLLER_H

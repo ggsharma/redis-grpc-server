@@ -40,7 +40,7 @@
 
 #include "Logger.h"
 #include "Controller.h"
-#include "Registry.h"
+
 
 
 using grpc::Server;
@@ -55,8 +55,8 @@ using redisgrpc::Registry;
 
 
 int main(int argc, char* argv[]) {
-    // Initialize registry
-    Registry r;
+    // Initialize empty registry
+    //Registry r;
     // Set default port value
     uint16_t portValue = 50051;
     // Parse command line arg
@@ -70,8 +70,8 @@ int main(int argc, char* argv[]) {
     // Construct a unique server address
     std::string server_address = absl::StrFormat("0.0.0.0:%d", portValue);
     // Instantiate a controller
-    Controller c(r,server_address);
+    Controller c(server_address);
     // Run server at the port number
-    c.RunServer(portValue);
+    c.RunServer();
     return 0;
 }

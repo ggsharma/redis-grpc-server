@@ -69,7 +69,8 @@ set(SOURCES
         main.cpp
         src/Controller.cpp
         src/Registry.cpp
-        src/Cache.cpp)
+        src/Cache.cpp
+        src/RedisGrpcServiceImpl.cpp)
 
 # main redislite executable server
 add_executable(redis_grpc_server ${SOURCES})
@@ -81,8 +82,6 @@ include_directories(include/)
 include_directories(lib/logger/)
 
 # Set the directory where your dylib resides
-#set(SERVER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/server/build)
-##set(CACHE_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/cache/build)
 set(LOGGER_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/logger/build)
 
 add_subdirectory(lib/logger)
@@ -92,7 +91,47 @@ add_subdirectory(lib/logger)
 # Link the library to your executable
 target_link_libraries(redis_grpc_server logger rl_grpc_proto grpc++ absl::flags absl::flags_parse)
 
+#add_library(lredis_grpc_server SHARED ${SOURCES})
 
+
+message(STATUS "Building Tests")
+
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+include_directories(include/)
+
+set(SOURCES1
+        src/Controller.cpp
+        src/Registry.cpp
+        src/Cache.cpp
+        src/RedisGrpcServiceImpl.cpp)
+
+add_executable(
+        controller_test
+        tests/tController.cpp
+        src/Registry.cpp
+        src/Cache.cpp
+)
+target_link_libraries(
+        controller_test
+        grpc++
+        grpc++_reflection
+        rl_grpc_proto
+        GTest::gtest_main
+)
+
+
+include(GoogleTest)
+gtest_discover_tests(controller_test)
 
 
 

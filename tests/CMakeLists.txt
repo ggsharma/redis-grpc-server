@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-project(RedisLiteTests)
+project(RedisGrpcTests)
 
 # GoogleTest requires at least C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -16,6 +16,9 @@ FetchContent_MakeAvailable(googletest)
 
 
 enable_testing()
+
+find_program(_GRPC_CPP_PLUGIN_EXECUTABLE grpc_cpp_plugin)
+set(_GRPC_CPP_PLUGIN_EXECUTABLE $<TARGET_FILE:grpc_cpp_plugin>)
 
 # main executable
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
@@ -45,7 +48,20 @@ target_link_libraries(
         GTest::gtest_main
 )
 
+add_executable(
+        controller_test
+        tController.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/../src/Controller.cpp
+)
+target_link_libraries(
+        controller_test
+        grpc++_reflection
+        grpc++
+        GTest::gtest_main
+)
+
+
 include(GoogleTest)
-#gtest_discover_tests(controller_test)
+gtest_discover_tests(controller_test)
 gtest_discover_tests(logger_test)
 gtest_discover_tests(cache_test)

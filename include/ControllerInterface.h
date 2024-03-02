@@ -23,31 +23,20 @@
 //  *
 
 //
-// Created by Gautam Sharma on 2/19/24.
+// Created by Gautam Sharma on 3/2/24.
 //
 
+#ifndef REDISGRPC_CONTROLLERINTERFACE_H
+#define REDISGRPC_CONTROLLERINTERFACE_H
 
-//#include <gtest/gtest.h>
-//#include "Logger.h"
-//// Demonstrate some basic assertions.
-//TEST(LoggerTest, Init) {
-//    using redisgrpc::lib::Logger;
-//    Logger l;
-//
-//    //EXPECT_TRUE(l);
-//}
-//
-//TEST(LoggerTest, NumDashes) {
-//using redisgrpc::lib::Logger;
-//Logger l;
-//EXPECT_EQ(l.getNumDashes(), 20);
-//}
-//
-//
-//TEST(LoggerTest, ProjectName) {
-//using redisgrpc::lib::Logger;
-//Logger l;
-//std::string expected = "🔥redislite";
-//EXPECT_EQ(l.getProjectName(), expected);
-//}
-//
+namespace redisgrpc{
+    class ControllerInterface {
+    public:
+        ControllerInterface() = default;
+        virtual void RunServer() = 0;
+        virtual void ShutDown(bool& serverStopped) = 0;
+        // Define other methods as needed
+    };
+}
+
+#endif //REDISGRPC_CONTROLLERINTERFACE_H

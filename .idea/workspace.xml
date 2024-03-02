@@ -19,7 +19,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/include/ControllerInterface.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/GlobalState.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/Macros.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/RedisGrpcServiceImpl.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RedisGrpcServiceImpl.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/redisgrpc.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/redisgrpc.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tLogger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tLogger.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CMakeLists.txt" />
         <option value="Python Script" />
+        <option value="CMakeLists.txt" />
       </list>
     </option>
   </component>

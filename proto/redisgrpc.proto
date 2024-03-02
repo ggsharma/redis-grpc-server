@@ -7,37 +7,49 @@ service RedisGrpcServer{
   rpc InitConnection(InitRequest) returns (InitReply){};
   rpc Set(SetRequest) returns (SetReply) {};
   rpc Get(GetRequest) returns (GetReply) {};
+  rpc Shutdown(ShutdownRequest) returns (ShutdownReply){};
   //rpc IsKey(GetRequest) returns (GetReply) {};
 }
 
-// The request message containing the user's name.
+// The request message containing the server address
 message InitRequest {
    string connection_id = 1;
 }
 
-// The response message containing the greetings
+// The response message containing the status of connection
 message InitReply {
    string status = 1;
 }
 
-// The request message containing the user's name.
+// The request message containing the server address
+message ShutdownRequest {
+//  string connection_id = 1;
+}
+
+// The response message containing the status of connection
+message ShutdownReply {
+  string status = 1;
+}
+
+// The request message containing the key and value
 message SetRequest{
   string key = 1;
   string value = 2;
 }
 
-// The response message containing the greetings
+// The response message containing the status of Set
 message SetReply {
   string status = 1;
 }
 
-// The request message containing the user's name.
+// The request message containing the key that needs to be Get
 message GetRequest{
   string key = 1;
 }
 
-// The response message containing the greetings
+// The response message containing Get status and value
 message GetReply {
   string status = 1;
   string value = 2;
 }
+

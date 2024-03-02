@@ -80,6 +80,11 @@ if __name__ == "__main__":
     run()
 ```
 
+## TODO / Work in Progress
+- Add the functionality to stop the server using a separate thread
+- Add the 
+- Make a web client in flask to monitor the current status of the cache
+
 ## How gRPC works
 Here's a simplified explanation of how gRPC works:
 
