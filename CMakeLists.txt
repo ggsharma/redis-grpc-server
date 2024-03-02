@@ -91,9 +91,7 @@ add_subdirectory(lib/logger)
 # Link the library to your executable
 target_link_libraries(redis_grpc_server logger rl_grpc_proto grpc++ absl::flags absl::flags_parse)
 
-#add_library(lredis_grpc_server SHARED ${SOURCES})
-
-
+# Build tests
 message(STATUS "Building Tests")
 
 include(FetchContent)
@@ -109,11 +107,6 @@ enable_testing()
 
 include_directories(include/)
 
-set(SOURCES1
-        src/Controller.cpp
-        src/Registry.cpp
-        src/Cache.cpp
-        src/RedisGrpcServiceImpl.cpp)
 
 add_executable(
         controller_test
@@ -128,7 +121,6 @@ target_link_libraries(
         rl_grpc_proto
         GTest::gtest_main
 )
-
 
 include(GoogleTest)
 gtest_discover_tests(controller_test)

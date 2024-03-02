@@ -81,9 +81,11 @@ if __name__ == "__main__":
 ```
 
 ## TODO / Work in Progress
-- Add the functionality to stop the server using a separate thread
-- Add the 
+- Date completed: Mar 2, 2024; ~~Add the functionality to stop the server using a separate thread~~
+- Modify the cache to delete a particular set of elements based on their frequency
 - Make a web client in flask to monitor the current status of the cache
+- Add a proxy client running on a separate thread that reads the information from the cache and publishes it to the flask server
+- Change cache data structure from an unordered_map to an ordered_map
 
 ## How gRPC works
 Here's a simplified explanation of how gRPC works:

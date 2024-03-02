@@ -36,7 +36,7 @@ namespace redisgrpc{
     namespace lib {
         class Cache{
         private:
-            const size_t MAX_NUM_ENTRIES = 1000;
+            const size_t MAX_NUM_ENTRIES = 10000;
             // TODO need to make it more flexible
             // value to frequency
             std::unordered_map<std::string, std::pair<std::string,int>> _data;
