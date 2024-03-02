@@ -97,8 +97,6 @@ Here's a simplified explanation of how gRPC works:
 
 7. **Bi-Directional Streaming**: gRPC also supports bi-directional streaming, where both client and server can send multiple messages asynchronously over a single connection. This is useful for real-time communication or long-lived connections.
 
-Certainly! Here's how you can add a license and contributing section to your project's README:
-
 
 ## License
 
