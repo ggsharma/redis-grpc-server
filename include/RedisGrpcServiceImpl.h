@@ -33,6 +33,7 @@
 #include <memory>
 #include <string>
 #include <thread>
+#include <future>
 
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
@@ -113,20 +114,13 @@ namespace redisgrpc{
         Status Shutdown(ServerContext* context, const ShutdownRequest* request,
                         ShutdownReply* reply) override{
             bool serverStopped = false;
-            // Need to create a new thread to stop the server thread
-            std::thread shutdownThread([&](){
-                GlobalState::sClientAddressToController[_connectionID]->ShutDown(serverStopped);
-            });
-
-            shutdownThread.join();
-
+            GlobalState::sClientAddressToController[this->_connectionID]->ShutDown(serverStopped);
             if(serverStopped){
-                reply->set_status(__SHUTDOWN_OK__);
-            }
-            else{
-                reply->set_status(__SHUTDOWN_ERROR__);
-            }
-
+                    reply->set_status(__SHUTDOWN_OK__);
+                }
+                else{
+                    reply->set_status(__SHUTDOWN_ERROR__);
+                }
             return Status::OK;
         }
     };

@@ -18,6 +18,8 @@
 #include <grpcpp/health_check_service_interface.h>
 #include <grpc/support/log.h>
 #include <grpcpp/grpcpp.h>
+#include <time.h>
+
 #include "Registry.h"
 #include "Macros.h"
 
@@ -78,11 +80,17 @@ namespace redisgrpc{
             server->Wait();
         }
 
+
         void ShutDown(bool& serverStopped) override{
-            server->Shutdown();
+            std::chrono::time_point deadline = std::chrono::system_clock::now() + std::chrono::milliseconds(100);
+            std::thread t([&](){
+                this->server->Shutdown(deadline);
+            });
+            t.detach();
             _serverStatus = SERVER_STATUS::KILLED;
             serverStopped = true;
         }
+
 
         // Mainly used for testing
         inline std::string getConnectionID() const {
@@ -98,6 +106,12 @@ namespace redisgrpc{
         std::string _connectionID; // In the format "0.0.0.0:<portValue>"
         std::unique_ptr<Server> server; // Server should be unique
         SERVER_STATUS _serverStatus = SERVER_STATUS::NOT_STARTED;
+//        inline static std::thread shutdownServerThread([&](){
+//            this->server->Shutdown();
+//            std::cout << "shutting down2" << std::endl;
+//            _serverStatus = SERVER_STATUS::KILLED;
+//            serverStopped = true;
+//        });
 
     };
 

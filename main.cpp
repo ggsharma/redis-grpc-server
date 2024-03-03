@@ -72,6 +72,9 @@ int main(int argc, char* argv[]) {
     // Instantiate a controller
     Controller c(server_address);
     // Run server at the port number
-    c.RunServer();
+    std::thread r([&](){
+        c.RunServer();
+    });
+    r.join();
     return 0;
 }
