@@ -35,8 +35,6 @@ namespace redisgrpc{
     namespace status{
         #define __CONNECTION_OK__ "REDISGRPC_OK"
         #define __CONNECTION_ERROR__ "REDISGRPC_CONNECTION_ERROR"
-        #define __KEY_FOUND__
-        #define __KEY_NOT_FOUND__
         #define __SET_SUCCESS__ "REDISGRPC_SET_OK"
         #define __SET_ERROR__ "REDISGRPC_SET_ERROR"
         #define __GET_SUCCESS__ "REDISGRPC_GET_OK"
@@ -44,7 +42,8 @@ namespace redisgrpc{
         #define __SHUTDOWN_OK__ "REDISGRPC_SHUTDOWN_OK"
         #define __SHUTDOWN_ERROR__ "REDISGRPC_SHUTDOWN_ERROR"
         #define __CONNECTION_ID_ERROR__ "REDISGRPC_INCORRECT_CONNECTION_ID"
-
+        #define __CACHE_RETRIEVAL_SUCCESS__ "REDISGRPC_CACHE_RETRIEVAL_SUCCESSFUL"
+        #define __CACHE_RETRIEVAL_ERROR__ "REDISGRPC_CACHE_RETRIEVAL_NOT_SUCCESSFUL"
     }
 
     enum class SERVER_STATUS{

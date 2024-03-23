@@ -8,6 +8,7 @@ service RedisGrpcServer{
   rpc Set(SetRequest) returns (SetReply) {};
   rpc Get(GetRequest) returns (GetReply) {};
   rpc Shutdown(ShutdownRequest) returns (ShutdownReply){};
+  rpc GetCacheForLogging(LoggerGetRequest) returns (LoggerGetReply){};
   //rpc IsKey(GetRequest) returns (GetReply) {};
 }
 
@@ -51,5 +52,14 @@ message GetRequest{
 message GetReply {
   string status = 1;
   string value = 2;
+}
+
+message LoggerGetRequest{
+
+}
+
+message LoggerGetReply{
+  string status = 1;
+  map<string, string> cache = 2;
 }
 

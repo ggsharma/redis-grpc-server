@@ -41,14 +41,19 @@ void Registry::Init(std::string connection_id){
 
 std::pair<bool,std::string> Registry::Get(std::string uniqueID, std::string key){
     _logger.log(absl::StrFormat("Getting Value for Key:%s", key));
-    auto cachePtr = this->_getInstance(uniqueID);
+    const auto& cachePtr = this->_getInstance(uniqueID);
     return cachePtr->Get(key);
 }
 
 void Registry::Set(std::string uniqueID, std::string key, std::string value){
      _logger.log(absl::StrFormat("Setting Value:%s for Key:%s ",value, key));
-    auto cachePtr = this->_getInstance(uniqueID);
+    const auto& cachePtr = this->_getInstance(uniqueID);
     cachePtr->Set(key, value);
+}
+
+std::unordered_map<std::string, std::string> Registry::getDataWithoutFreq(std::string uniqueID){
+    const auto& cachePtr = this->_getInstance(uniqueID);
+    return cachePtr->getDataWithoutFreq();
 }
 
 

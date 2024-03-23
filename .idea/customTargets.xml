@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CLionExternalBuildManager">
-    <target id="f2fce0cf-24f5-440a-8aaf-3058d6c45b5a" name="redislite" defaultType="TOOL">
-      <configuration id="2ddfbdc7-c750-4047-ab1c-efe16103c336" name="redislite" toolchainName="Default" />
+    <target id="f2fce0cf-24f5-440a-8aaf-3058d6c45b5a" name="cachetest" defaultType="TOOL">
+      <configuration id="2ddfbdc7-c750-4047-ab1c-efe16103c336" name="cachetest" toolchainName="Default" />
     </target>
   </component>
 </project>

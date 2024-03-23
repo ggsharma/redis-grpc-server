@@ -26,38 +26,101 @@
 // Created by Gautam Sharma on 2/18/24.
 //
 #include "Cache.hpp"
+#include "Macros.h"
 #include <cassert>
 
 using redisgrpc::lib::Cache;
 
 std::pair<bool,std::string> Cache::Get(std::string key){
     if(this->_data.find(key) == this->_data.end()){
-        return std::make_pair(false, "REDISLITE_NONE");
+        return std::make_pair(false, __GET_ERROR__);
     }
+
+    int oldFreq = this->_data[key].second;
+
     // increment the frequency
     this->_data[key].second += 1;
-    return  std::make_pair(true, this->_data.at(key).first);
+
+    int newFreq = this->_data[key].second;
+
+    // Delete old freq to key
+    // // freq = {key1, key2,key3.....}
+    auto itToPairOfFreqAndKeys = this->_freqToKeys.find(oldFreq);
+
+    if(itToPairOfFreqAndKeys != this->_freqToKeys.end()){
+
+        auto itToKey = itToPairOfFreqAndKeys->second.find(key);
+        // It to key in unordered_Set
+        if(itToKey != itToPairOfFreqAndKeys->second.end()){
+            // erase key
+            itToPairOfFreqAndKeys->second.erase(itToKey);
+            // if unordered_set empty now
+            if(itToPairOfFreqAndKeys->second.empty()){
+                // erase the key which is frequency as well
+                this->_freqToKeys.erase(oldFreq);
+                // erase the frequency from set
+                this->_minFrequency.erase(oldFreq);
+            }
+        }
+        // key not found -> Get Request sent before Set. Should be handled by the code at the start of the function
+        else{
+            // No Op
+        }
+    }
+
+
+    // insert new freq
+    this->_freqToKeys[newFreq].insert(key);
+
+    // Insert new frequency
+    this->_minFrequency.insert(newFreq);
+
+    return std::make_pair(true, this->_data.at(key).first);
+}
+
+void Cache::removeLeastFrequencyElements(){
+        auto itToMinFreq = this->_minFrequency.begin();
+        assert(itToMinFreq != this->_minFrequency.end());
+        int minFreq = *itToMinFreq;
+
+        auto keys = this->_freqToKeys[minFreq];
+        // Delete the least frequency element from map
+        for(const auto&k : keys){
+            this->_data.erase(k);
+        }
+        // Delete the least frequency element from set
+        this->_minFrequency.erase(itToMinFreq);
+        this->_freqToKeys.erase(minFreq);
 }
 
 void Cache::Set(std::string key, std::string value){
-    if(this->_data.size() == this->MAX_NUM_ENTRIES){
-        // Find the element with the minimum frequency
-        auto min_freq_itr = this->_data.begin();
-        for (auto itr = this->_data.begin(); itr != this->_data.end(); ++itr) {
-            if (itr->second.second < min_freq_itr->second.second) {
-                min_freq_itr = itr;
-            }
-        }
-
-        // Erase the element with the minimum frequency
-        if (min_freq_itr != _data.end()) {
-            _data.erase(min_freq_itr);
-        }
+    // Key was already present
+    if(this->_data.find(key) != this->_data.end()){
+        return;
     }
+
+    if(this->_data.size() == this->_maxNumEntries){
+        // remove least frequency elements
+        this->removeLeastFrequencyElements();
+    }
+
+    this->_freqToKeys[1].insert(key);
+
+    this->_minFrequency.insert(1);
+
     this->_data[key].first = value;
     // init the frequency
     this->_data[key].second = 1;
-    assert(this->_data.size() <= MAX_NUM_ENTRIES);
+}
+
+std::unordered_map<std::string, std::string> Cache::getDataWithoutFreq() const{
+    // It's not efficient to always send the whole map
+    //  Should find some another way
+    std::unordered_map<std::string, std::string> out;
+    for(const auto& keyValue : this->_data){
+        out[keyValue.first] = keyValue.second.first;
+    }
+    return out;
 }
 
 void Cache::print(){
