@@ -88,14 +88,15 @@ add_executable(redis_grpc_server ${SOURCES})
 # redisgrpc search directories
 include_directories(include/)
 include_directories(lib/logger/)
+include_directories(lib/file_system/)
 
 add_subdirectory(lib/logger)
-#add_subdirectory(tests)
+add_subdirectory(lib/file_system)
 
 # Link the library to your executable
 target_link_libraries(redis_grpc_server
         PRIVATE
-        logger rl_grpc_proto grpc++ absl::flags absl::flags_parse)
+        logger file_system rl_grpc_proto grpc++ absl::flags absl::flags_parse)
 
 
 
@@ -134,9 +135,17 @@ add_executable(
         src/Cache.cpp
 )
 
+# Cache
 add_executable(
         cache_test
         tests/tCache.cpp
+        src/Cache.cpp
+)
+
+# File System
+add_executable(
+        file_system_test
+        tests/tFileSystem.cpp
         src/Cache.cpp
 )
 
@@ -150,6 +159,15 @@ target_link_libraries(
 
 target_link_libraries(
         cache_test
+        grpc++
+        grpc++_reflection
+        rl_grpc_proto
+        GTest::gtest_main
+)
+
+# File system
+target_link_libraries(
+        file_system_test
         grpc++
         grpc++_reflection
         rl_grpc_proto

@@ -5,7 +5,5 @@
 
 using redisgrpc::Controller;
 
-//Controller::Controller(const Registry& registry) : _registry(registry) {
-//}
-//
 
+// Nothing here

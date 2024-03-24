@@ -32,38 +32,87 @@
 #include <memory>
 #include <utility>
 
+
+
+// TODO need to make it more flexible. Right now it just supports string as the key and value type.
+// Might need to templatize it.
+
+/*
+ * Main data structure
+ * It evicts entries based on the least frequency used (LRU) policy
+ * Whenever a GET request comes in, the frequency related to the key gets incremented
+ * The key's that have the least frequency are evicted if the cache gets full
+ */
+
+
+/*
+ * The data structure is like this
+ * _data : {key : [value, frequency]} ......
+ * _minFrequency : {minimum heap of all the frequencies}
+ * _freqToKeys : {frequency : [keys]}
+ */
 namespace redisgrpc{
+    // TODO: Package this into a separate library
     namespace lib {
         class Cache{
         private:
-            size_t _maxNumEntries;
+            size_t _maxNumEntries; // max entries allowed in the cache
+
             size_t _numElementsToBeRemoved = 0.1*_maxNumEntries;
-            // TODO need to make it more flexible
-            // value to frequency
-            // min heap
+
+            /*
+             * Stores the minimum frequency of keys seen till now.
+             * Min heap
+             */
             std::set<int> _minFrequency;
+
+
             // key : {value, frequency}
             std::unordered_map<std::string, std::pair<std::string,int>> _data;
-            // freq = {key1, key2,key3.....}
+
+            /*
+             * Associates the frequency with the respective keys
+             */
             std::unordered_map<int, std::unordered_set<std::string>> _freqToKeys;
+
+            // Removes the keys from the cache that have the least frequency
             void removeLeastFrequencyElements();
+
         public:
+
             // Default constructor
             Cache(size_t maxNumEntries = 100000): _maxNumEntries(maxNumEntries){
             };
 
-            // used for testing
+            // Used for testing
             inline std::unordered_map<std::string, std::pair<std::string,int>> getData(){return _data;}
+
+            // Used to get the cache data to stream it to the front end client
             std::unordered_map<std::string, std::string> getDataWithoutFreq() const;
+
+            // Getter for minimum frequency set
             const std::set<int>& getMinFrequencySet() const{
                 return _minFrequency;
             };
+
+            // Getter for frequency to keys map
             const std::unordered_map<int, std::unordered_set<std::string>>& getFreqToKeysMap() const{
                 return _freqToKeys;
             };
+
+            // Gets the pair of bool and string. The bool represents if the key is present in the cache and the string
+            // represents the value corresponding the key
             std::pair<bool,std::string> Get(std::string key);
+
+            // Inserts the key in the cache and sets its frequency to 1
             void Set(std::string key, std::string val);
+
+            // Copies the content of the cache to a persistent file and returns the status as a boolean
+            bool toDB() const;
+
+            // Prints the cache to the console
             void print();
+
         }; // EO class Cache
     }; // EO namespace lib
 }; // EO namespace redisgrpc

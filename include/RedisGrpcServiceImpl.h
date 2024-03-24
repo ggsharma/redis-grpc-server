@@ -128,7 +128,7 @@ namespace redisgrpc{
         Status GetCacheForLogging(ServerContext* context, const LoggerGetRequest* request ,
                                   LoggerGetReply* reply) override{
             const auto cache = _registry->getDataWithoutFreq(_connectionID);
-            if(cache){
+            if(cache.begin() != cache.end()){
                 reply->set_status(__CACHE_RETRIEVAL_SUCCESS__);
                 for(const auto& keyValue : cache){
                     reply->mutable_cache()->insert({keyValue.first,keyValue.second});

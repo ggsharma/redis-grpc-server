@@ -23,24 +23,20 @@
 //  *
 
 //
-// Created by Gautam Sharma on 3/2/24.
+// Created by Gautam Sharma on 3/24/24.
 //
+#include <gtest/gtest.h>
+#include "Cache.hpp"
+#include <string>
+#include <random>
+#include <vector>
 
-#ifndef REDISLITE_GLOBALSTATE_H
-#define REDISLITE_GLOBALSTATE_H
-#include "ControllerInterface.h"
 
-/*
- * Stores a controller interface* for a unique address
- */
-
-namespace redisgrpc{
-    class GlobalState{
-    public:
-        GlobalState() = default;
-        GlobalState(const GlobalState&) = delete;
-        inline static std::unordered_map<std::string, ControllerInterface*> sClientAddressToController;
-    };
+// Check if cache being written to a file or not
+TEST(FileSystemTest, Init) {
+using redisgrpc::lib::Cache;
+Cache c;
+c.Set("hello", "4");
+c.Set("mello", "1");
+ASSERT_TRUE(c.toDB());
 }
-
-#endif //REDISLITE_GLOBALSTATE_H

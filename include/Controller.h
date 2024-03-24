@@ -9,10 +9,6 @@
 #include <memory>
 #include <string>
 #include <thread>
-
-//#include "absl/flags/flag.h"
-//#include "absl/flags/parse.h"
-//#include "absl/strings/str_format.h"
 #include <grpcpp/ext/proto_server_reflection_plugin.h>
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/health_check_service_interface.h>
@@ -22,7 +18,6 @@
 
 #include "Registry.h"
 #include "Macros.h"
-
 #include "redisgrpc.grpc.pb.h"
 #include "redisgrpc.pb.h"
 
@@ -40,29 +35,29 @@ using redisgrpc::SetRequest;
 using redisgrpc::SetReply;
 
 #include "RedisGrpcServiceImpl.h"
-
 #include "GlobalState.h"
-
 #include "ControllerInterface.h"
+
 namespace redisgrpc{
-
-
     class Controller: public ControllerInterface{
-
     public:
         Controller(std::string connectionId): _registry(new Registry()), _connectionID(connectionId){
             GlobalState::sClientAddressToController[connectionId] = this;
             this->Init();
         };
-        // Initialize the registry
+
+        // Initialize the registry that in turn initializes the cache
         void Init(){
             _registry->Init(this->_connectionID);
         }
 
         void RunServer() override{
             RedisGrpcServiceImpl service (_connectionID, _registry);
+
             grpc::EnableDefaultHealthCheckService(true);
+
             grpc::reflection::InitProtoReflectionServerBuilderPlugin();
+
             ServerBuilder builder;
             // Listen on the given address without any authentication mechanism.
             builder.AddListeningPort(_connectionID, grpc::InsecureServerCredentials());
@@ -72,15 +67,13 @@ namespace redisgrpc{
             // Finally assemble the server.
             server = builder.BuildAndStart();
             std::cout << "RedisGrpc server listening on " << _connectionID << std::endl;
-
             _serverStatus = SERVER_STATUS::RUNNING;
-
             // Wait for the server to shutdown. Note that some other thread must be
             // responsible for shutting down the server for this call to ever return.
             server->Wait();
         }
 
-
+        // Need to shutdown the server from a new thread
         void ShutDown(bool& serverStopped) override{
             std::chrono::time_point deadline = std::chrono::system_clock::now() + std::chrono::milliseconds(100);
             std::thread t([&](){
@@ -91,12 +84,12 @@ namespace redisgrpc{
             serverStopped = true;
         }
 
-
         // Mainly used for testing
         inline std::string getConnectionID() const {
             return this->_connectionID;
         }
 
+        // Get server status
         inline SERVER_STATUS getServerStatus() const{
             return this->_serverStatus;
         }
@@ -105,21 +98,11 @@ namespace redisgrpc{
         std::shared_ptr<Registry> _registry; // Reference to registry can be shared
         std::string _connectionID; // In the format "0.0.0.0:<portValue>"
         std::unique_ptr<Server> server; // Server should be unique
-        SERVER_STATUS _serverStatus = SERVER_STATUS::NOT_STARTED;
-//        inline static std::thread shutdownServerThread([&](){
-//            this->server->Shutdown();
-//            std::cout << "shutting down2" << std::endl;
-//            _serverStatus = SERVER_STATUS::KILLED;
-//            serverStopped = true;
-//        });
+        SERVER_STATUS _serverStatus = SERVER_STATUS::NOT_STARTED; // Initial status of the server
 
     };
 
 
-
-
 } // EO namespace redisgrpc
-
-
 
 #endif //REDISGRPC_CONTROLLER_H

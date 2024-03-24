@@ -19,17 +19,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/customTargets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/customTargets.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/file_system/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/file_system/FileSystem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/file_system/FileSystem.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tFileSystem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Cache.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Cache.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Macros.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Macros.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/GlobalState.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/GlobalState.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/RedisGrpcServiceImpl.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RedisGrpcServiceImpl.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Registry.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Registry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/redisgrpc.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/redisgrpc.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Registry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Registry.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tCache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tCache.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +112,11 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cachetest" type="CLionExternalRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RedisLite" TARGET_NAME="cachetest" CONFIG_NAME="cachetest" RUN_PATH="$PROJECT_DIR$/build/cache_test">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -117,11 +126,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="build tests" type="ShConfigurationType">
@@ -206,7 +210,8 @@
       <workItem from="1710702739436" duration="10032000" />
       <workItem from="1710717802169" duration="8702000" />
       <workItem from="1711043000658" duration="943000" />
-      <workItem from="1711198988826" duration="6358000" />
+      <workItem from="1711198988826" duration="8052000" />
+      <workItem from="1711306758373" duration="5790000" />
     </task>
     <servers />
   </component>
@@ -234,6 +239,16 @@
           <url>file://$PROJECT_DIR$/main.cpp</url>
           <line>55</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/include/Cache.hpp</url>
+          <line>8</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/tCache.cpp</url>
+          <line>75</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

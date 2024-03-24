@@ -38,19 +38,34 @@
 #include "Logger.h"
 
 namespace redisgrpc{
-
     class Registry{
     private:
         redisgrpc::lib::Logger _logger;
     public:
+        // Default constructor
         Registry() = default;
+
+        // Takes a connection id that is a local host running on a particular port number
         void Init(std::string connection_id);
+
+        // Gets the pair of bool and string. The bool represents if the key is present in the cache and the string
+        // represents the value corresponding the key
         std::pair<bool,std::string> Get(std::string uniqueID, std::string key);
+
+        // Inserts the key in the cache and sets its frequency to 1
         void Set(std::string uniqueID, std::string key, std::string value);
+
+        // Used to get the cache data to stream it to the front end client
         std::unordered_map<std::string, std::string> getDataWithoutFreq(std::string uniqueID);
+
     private:
+        // Initializes a shared_ptr to Cache
         void _init(const std::string& uniqueID);
+
+        // Gets shared_ptr instance to the cache
         std::shared_ptr<redisgrpc::lib::Cache> _getInstance(const std::string& uniqueID);
+
+        // Stores a cache for a unique address
         std::unordered_map<std::string, std::shared_ptr<redisgrpc::lib::Cache>> _uniqueIDToCacheMap;
     };
 }

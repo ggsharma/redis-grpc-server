@@ -23,24 +23,7 @@
 //  *
 
 //
-// Created by Gautam Sharma on 3/2/24.
+// Created by Gautam Sharma on 3/24/24.
 //
+#include "FileSystem.h"
 
-#ifndef REDISLITE_GLOBALSTATE_H
-#define REDISLITE_GLOBALSTATE_H
-#include "ControllerInterface.h"
-
-/*
- * Stores a controller interface* for a unique address
- */
-
-namespace redisgrpc{
-    class GlobalState{
-    public:
-        GlobalState() = default;
-        GlobalState(const GlobalState&) = delete;
-        inline static std::unordered_map<std::string, ControllerInterface*> sClientAddressToController;
-    };
-}
-
-#endif //REDISLITE_GLOBALSTATE_H
