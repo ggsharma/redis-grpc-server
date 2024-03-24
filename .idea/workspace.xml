@@ -19,21 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/file_system/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/file_system/FileSystem.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/file_system/FileSystem.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/tFileSystem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Cache.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Cache.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Controller.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/GlobalState.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/GlobalState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/RedisGrpcServiceImpl.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RedisGrpcServiceImpl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Registry.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Registry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logger/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,11 +95,6 @@
   </component>
   <component name="RunManager" selected="Shell Script.prod build">
     <configuration name="RedisLite debug" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="redislite" TARGET_NAME="redislite" RUN_PATH="$PROJECT_DIR$/build/redislite">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
@@ -211,7 +193,8 @@
       <workItem from="1710717802169" duration="8702000" />
       <workItem from="1711043000658" duration="943000" />
       <workItem from="1711198988826" duration="8052000" />
-      <workItem from="1711306758373" duration="5790000" />
+      <workItem from="1711306758373" duration="5881000" />
+      <workItem from="1711319949219" duration="15000" />
     </task>
     <servers />
   </component>

@@ -26,7 +26,7 @@
 #define REDISGRPC_CACHE_H
 
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <set>
 #include <unordered_set>
 #include <memory>
