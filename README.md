@@ -4,11 +4,27 @@ by Gautam Sharma - [Visit Website](https://gsharma.dev)
 
 ## Introduction
 
-Welcome to RedisGrpcServer! Here, we'll learn how to create a system similar to Redis, a popular data storage tool. But we'll do it in a way that's easy to understand, using a programming language called C++ and a method called gRPC.
+Welcome to RedisGrpcServer! This is a simple **Redis like** cache server built on top of gRPC for programming language agnostic client hookups. 
+
+It uses a Least Frequency Used policy to evict entries from the cache. 
+
+The frequency of each key is incremented on a `get` request. More information in examples directory.
+
+## Choice of language
+
+We wanted our cache to be extremely fast with low latency. There are a lot of new languages that are extremely fast. C++ was chosen to be our primary 
+backend language for the following reasons:
+
+- Gives us low level control of the memory
+- Extremely fast and mature language
+- Gives us the power to design our data structure in any way we so desire
+
+The client for now is written in Python but we are looking for contributors to extend the use case to other languages as well/
 
 ## Getting Started
 
-Let's start by understanding why we're doing this. I got interested in Redis and wanted to know how it works. So, I decided to build something similar myself using my knowledge of C++.
+Let's start by understanding why we're doing this. I got interested in Redis and wanted to know how it works. The best way to learn something is by building it
+and I hope you too learn something from this project and contribute something to it as well.
 
 ## The Framework
 
@@ -26,15 +42,24 @@ Our system has three main parts:
 
 We keep our system running smoothly by making sure we don't store too much data. We also make sure that when programs talk to each other, they do it quickly and without any delays.
 
+
+### Cache Data Structure
+ Our Cache data structure is a hashmap that stores a `std::string` as it's key and a `std::pair<std::string, int>` that corresponds to the value and the frequency of the key.
+Visually it looks like this:
+
+[Cache Data structure![](https://app.eraser.io/workspace/BuQcYkI5awNzJA2tpTs2/preview)](https://app.eraser.io/workspace/BuQcYkI5awNzJA2tpTs2)
+
+Look at `Cache.hpp` or `Cache.cpp` for implementation details.
+
 ## Building and Running
 
 ### For Mac:
 
 1. Go to the `redis-grpc-server` folder.
-2. Create a new folder called `build`.
-3. Go into the `build` folder.
-4. Type `cmake -DCMAKE_BUILD_TYPE=Debug .. && make -j16` and press Enter.
-5. Run `./redis_grpc_server`.
+2. `mkdir build`
+3. `cd build`
+4. `cmake -DCMAKE_BUILD_TYPE=Debug .. && make -j16`
+5. `./redis_grpc_server <optional argument as port number>`.
 
 ### For Windows:
 
@@ -90,6 +115,7 @@ if __name__ == "__main__":
 - Document the code
 - Possible make the python client part of the repo instead of a separate package
 - Add Github actions to automate build for linux and mac
+
 
 ## How gRPC works
 Here's a simplified explanation of how gRPC works:
