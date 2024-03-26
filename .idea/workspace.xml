@@ -19,10 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5208829c-77ee-453b-a513-08eeb80faa54" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cmake-multi-platform.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cmake-multi-platform.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Cache.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Cache.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cache.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +196,7 @@
       <workItem from="1711306758373" duration="5881000" />
       <workItem from="1711319949219" duration="1257000" />
       <workItem from="1711410275967" duration="2257000" />
-      <workItem from="1711412824325" duration="2745000" />
+      <workItem from="1711412824325" duration="4201000" />
     </task>
     <servers />
   </component>

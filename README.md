@@ -2,6 +2,19 @@
 
 by Gautam Sharma - [Visit Website](https://gsharma.dev)
 
+# redis-grpc-server
+![GitHub License](https://img.shields.io/github/license/gautam-sharma1/redis-grpc-server?color=yellow)
+![](https://img.shields.io/badge/Code-C++-green)
+![](https://img.shields.io/badge/Code-Python-green)
+![](https://img.shields.io/badge/Dependency-gRPC-orange)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/gautam-sharma1/redis-grpc-server)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/gautam-sharma1/redis-grpc-server/.github/workflows/cmake-multi-platform.yml)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gautam-sharma1/redis-grpc-server)
+
+
+
+
+
 ## Introduction
 
 Welcome to RedisGrpcServer! This is a simple **Redis like** cache server built on top of gRPC for programming language agnostic client hookups. 
