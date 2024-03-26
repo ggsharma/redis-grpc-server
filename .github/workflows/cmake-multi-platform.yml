@@ -45,13 +45,11 @@ jobs:
 
       - name: Install CMake
         if: startsWith(matrix.os, 'windows-')
-        # For Windows, install CMake from the official distribution
         run: |
           choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"'
 
       - name: Install CMake
         if: startsWith(matrix.os, 'macos-')
-        # For macOS, install CMake using Homebrew
         run: |
           brew install cmake
 
@@ -62,6 +60,11 @@ jobs:
           -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -S ${{ github.workspace }}
+
+      - name: Set CXX Compiler for macOS
+        if: startsWith(matrix.os, 'macos-')
+        run: |
+          echo "CMAKE_CXX_COMPILER=/usr/bin/clang++" >> ${{ steps.strings.outputs.build-output-dir }}/CMakeCache.txt
 
       - name: Build
         run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}

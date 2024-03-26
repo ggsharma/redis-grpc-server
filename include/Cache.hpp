@@ -54,7 +54,11 @@
 namespace redisgrpc{
     // TODO: Package this into a separate library
     namespace lib {
+        using SetOfInt_T = std::set<int>;
+        using Cache_T = std::unordered_map<std::string, std::pair<std::string,int>>;
+        using MapOfIntToSetOfStr_T = std::unordered_map<int, std::unordered_set<std::string>>;
         class Cache{
+
         private:
             size_t _maxNumEntries; // max entries allowed in the cache
 
@@ -64,16 +68,15 @@ namespace redisgrpc{
              * Stores the minimum frequency of keys seen till now.
              * Min heap
              */
-            std::set<int> _minFrequency;
-
+            SetOfInt_T _minFrequency;
 
             // key : {value, frequency}
-            std::unordered_map<std::string, std::pair<std::string,int>> _data;
+            Cache_T _data;
 
             /*
              * Associates the frequency with the respective keys
              */
-            std::unordered_map<int, std::unordered_set<std::string>> _freqToKeys;
+            MapOfIntToSetOfStr_T _freqToKeys;
 
             // Removes the keys from the cache that have the least frequency
             void removeLeastFrequencyElements();
@@ -85,18 +88,18 @@ namespace redisgrpc{
             };
 
             // Used for testing
-            inline std::unordered_map<std::string, std::pair<std::string,int>> getData(){return _data;}
+            inline Cache_T getData(){return _data;}
 
             // Used to get the cache data to stream it to the front end client
             std::unordered_map<std::string, std::string> getDataWithoutFreq() const;
 
             // Getter for minimum frequency set
-            const std::set<int>& getMinFrequencySet() const{
+            const SetOfInt_T& getMinFrequencySet() const{
                 return _minFrequency;
             };
 
             // Getter for frequency to keys map
-            const std::unordered_map<int, std::unordered_set<std::string>>& getFreqToKeysMap() const{
+            const MapOfIntToSetOfStr_T& getFreqToKeysMap() const{
                 return _freqToKeys;
             };
 

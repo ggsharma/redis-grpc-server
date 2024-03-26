@@ -34,6 +34,7 @@
 using redisgrpc::lib::Cache;
 using redisgrpc::lib::FileSystem;
 
+
 std::pair<bool,std::string> Cache::Get(std::string key){
     // If key not present then return early
     if(this->_data.find(key) == this->_data.end()){
@@ -95,6 +96,7 @@ std::pair<bool,std::string> Cache::Get(std::string key){
     return std::make_pair(true, this->_data.at(key).first);
 }
 
+
 void Cache::removeLeastFrequencyElements(){
     // Get iterator to the begin of the map
     auto itToMinFreq = this->_minFrequency.begin();
@@ -121,6 +123,7 @@ void Cache::removeLeastFrequencyElements(){
     this->_freqToKeys.erase(minFreq);
 }
 
+
 void Cache::Set(std::string key, std::string value){
     // Key was already present
     if(this->_data.find(key) != this->_data.end()){
@@ -145,6 +148,7 @@ void Cache::Set(std::string key, std::string value){
     this->_data[key].second = 1;
 }
 
+
 std::unordered_map<std::string, std::string> Cache::getDataWithoutFreq() const{
     // It's not efficient to always send the whole map
     //  Should find some another way
@@ -156,9 +160,11 @@ std::unordered_map<std::string, std::string> Cache::getDataWithoutFreq() const{
 }
 
 
+
 bool Cache::toDB() const{
     return FileSystem::sendContentsToDB(this->_data);
 }
+
 
 void Cache::print(){
     for(auto&[k,v] : this->_data){
