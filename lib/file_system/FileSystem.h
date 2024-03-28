@@ -41,7 +41,7 @@ namespace fs = std::filesystem;
 
 namespace redisgrpc {
     namespace lib{
-        using Cache_T = const std::unordered_map<std::string, std::pair<std::string,int>>&;
+        using Cache_T = std::unordered_map<std::string, std::pair<std::string,int>>;
         class FileSystem{
         private:
             std::string _fileName;
@@ -49,7 +49,7 @@ namespace redisgrpc {
         private:
             FileSystem() = delete;
         public:
-            inline static bool sendContentsToDB( Cache_T cache, const std::string& fileName="redisgrpc_cache", const std::string& directoryName = "db"){
+            inline static bool sendContentsToDB( const Cache_T& cache, const std::string& fileName="redisgrpc_cache", const std::string& directoryName = "db"){
                 // Create a directory called "db" if it doesn't exist
                 fs::path directory = directoryName;
                 if (!fs::exists(directory)) {

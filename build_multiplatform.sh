@@ -39,19 +39,7 @@ if ! command -v cmake &> /dev/null || [ "$(cmake --version | cut -d ' ' -f 3)" \
     esac
 fi
 
-# Install other required tools
-case $OS in
-    Linux)
-        sudo apt install -y build-essential autoconf libtool pkg-config
-        ;;
-    Mac)
-        brew install autoconf automake libtool pkg-config
-        ;;
-    *)
-        echo "Error: Unsupported OS for tools installation."
-        exit 5
-        ;;
-esac
+
 
 # Path to the directory
 DIR="build"
@@ -76,7 +64,7 @@ if ! cmake -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR ..; then
 fi
 
 # Run make command
-if ! make -j 4; then
+if ! make -j 16; then
     echo "Error: make command failed."
     exit 3
 fi
