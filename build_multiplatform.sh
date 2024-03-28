@@ -70,7 +70,7 @@ fi
 cd "$DIR"
 
 # Run cmake command
-if ! cmake -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR ../..; then
+if ! cmake -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR ..; then
     echo "Error: cmake command failed."
     exit 2
 fi
