@@ -15,5 +15,5 @@ jobs:
 
       - name: Run shell script
         run: |
-          chmod +x ./build_multi.sh
-          ./build_multi.sh
+          chmod +x ./build_multiplatform.sh
+          ./build_multiplatform.sh
