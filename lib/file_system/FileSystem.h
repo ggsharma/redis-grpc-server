@@ -36,8 +36,8 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem> // For filesystem operations
-namespace fs = std::filesystem;
 
+namespace fs = std::filesystem;
 
 namespace redisgrpc {
     namespace lib{

@@ -3,16 +3,13 @@
 by Gautam Sharma - [Visit Website](https://gsharma.dev)
 
 # redis-grpc-server
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/gautam-sharma1/redis-grpc-server/.github/workflows/cmake-multi-platform.yml)
 ![GitHub License](https://img.shields.io/github/license/gautam-sharma1/redis-grpc-server?color=yellow)
 ![](https://img.shields.io/badge/Code-C++-green)
 ![](https://img.shields.io/badge/Code-Python-green)
 ![](https://img.shields.io/badge/Dependency-gRPC-orange)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/gautam-sharma1/redis-grpc-server)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/gautam-sharma1/redis-grpc-server/.github/workflows/cmake-multi-platform.yml)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gautam-sharma1/redis-grpc-server)
-
-
-
 
 
 ## Introduction
@@ -124,10 +121,10 @@ if __name__ == "__main__":
 - Make a web client in flask to monitor the current status of the cache
 - Add a proxy client running on a separate thread that reads the information from the cache and publishes it to the flask server
 - ~~Change cache data structure from an unordered_map to an ordered_map~~
-- Make the cache persistent by saving the cache to a file
-- Document the code
+- ~~Make the cache persistent by saving the cache to a file~~
+- ~~Document the code~~
 - Possible make the python client part of the repo instead of a separate package
-- Add Github actions to automate build for linux and mac
+- Date completed: Mar 30, 2024; ~~Add Github actions to automate build for linux and mac~~
 
 
 ## How gRPC works
@@ -147,6 +144,7 @@ Here's a simplified explanation of how gRPC works:
 
 7. **Bi-Directional Streaming**: gRPC also supports bi-directional streaming, where both client and server can send multiple messages asynchronously over a single connection. This is useful for real-time communication or long-lived connections.
 
+For more information on how gRPC works look at the official doc: [gRPC](https://grpc.io)
 
 ## License
 
